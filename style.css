@@ -152,7 +152,7 @@ a:visited {
 
 .blob:nth-child(4) {
     rotate: 45deg;
-    animation: orbit step-start 4s infinite;
+    animation: orbit linear 4s infinite;
 }
 
 .blob:nth-child(5) {
