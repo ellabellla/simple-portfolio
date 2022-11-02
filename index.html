@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+        <link href="./style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="pink-blobs">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+        </div>
+        <h1>Ella Pash</h1>
+        <section>
+            <p id="history">
+                <span>❯</span> ls<br/>
+                <div id="ls">
+                </div>
+            </p>
+            <div id="prompt">
+                <span>❤️</span><div id="tri"></div><span>🗀</span><span>~/projects/</span><div></div><span></span><span></span><div></div><span id="time"></span>
+            </div>
+        </section>
+        
+        <script>
+            var ls = document.getElementById("ls");
+            fetch('https://api.github.com/users/ellabellla/repos')
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    for (repo of data) {
+                        ls.innerHTML += `<div><a href="https://github.com/${repo["full_name"]}">${repo["name"]}/</a></div>`;
+                    }
+                });
+
+            const d = new Date();  
+            document.getElementById('time').innerHTML = `✔️ ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()} `; // ${d.getDay()}/${d.getMonth()}/${d.getYear()}
+        </script>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="blobby">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="15"
+                        result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0
+                        0 1 0 0 0 0 0 1 0 0 0 0 0 18 -7" result="plasma" />
+                    <feBlend in="SourceGraphic" in2="plasma" />
+                </filter>
+            </defs>
+        </svg>
+</body>
+</html>

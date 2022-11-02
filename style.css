@@ -1,0 +1,243 @@
+body {
+    background-color: #2C363F;
+    font-family: 'Noto Sans Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+h1 {
+    font-size: 5rem;
+    color: #DD99BB;
+    margin: 0;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #8A75A9;
+}
+
+a:visited {
+    color: #8A75A9;
+}
+
+#history {
+    font-size: 1rem;
+    color: #5FAD56;
+}
+
+#ls {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-left: 5px;
+}
+
+#prompt {
+    font-size: 0.79rem;
+}
+
+#prompt span {
+    padding: 2px;
+    display: inline;
+    height: 20px;
+}
+
+#prompt span:nth-child(1) {
+    background-color: #DD99BB; 
+}
+
+#prompt div:nth-child(2) {
+    background-color: #8A75A9; 
+    color: white;
+    display: inline-block;
+    width:0;
+    height:0;
+    position: relative;
+    top: 6px;
+    border-top: 11px solid transparent;
+    border-left: 15px solid #DD99BB;
+    border-bottom: 11px solid transparent;
+}
+
+#prompt span:nth-child(3) {
+    color: white;
+    background-color: #8A75A9; 
+}
+
+#prompt span:nth-child(4) {
+    color: white;
+    background-color: #8A75A9; 
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+#prompt div:nth-child(5) {
+    background-color: #2C363F; 
+    display: inline-block;
+    width:0;
+    height:0;
+    position: relative;
+    top: 6px;
+    border-top: 11px solid transparent;
+    border-left: 15px solid #8A75A9;
+    border-bottom: 11px solid transparent;
+}
+
+#prompt span:nth-child(6) {
+    background-color: transparent;
+    animation: blink 1s infinite;
+    padding-right: 10px;
+    margin-left: 8px;
+}
+
+#prompt span:nth-child(7) {
+    background-color: transparent;
+    padding-right: 30vw;
+}
+
+#prompt div:nth-child(8) {
+    background-color: #2C363F; 
+    display: inline-block; /* Add this line */
+    width:0;
+    height:0;
+    position: relative;
+    top: 6px;
+    border-top: 11px solid transparent;
+    border-right: 15px solid #8A75A9;
+    border-bottom: 11px solid transparent;
+}
+
+#prompt span:nth-child(9) {
+    color: white;
+    background-color: #8A75A9; 
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#pink-blobs {
+    filter: url("#blobby");
+    height: 28vh;
+    width: 40vw;
+}
+
+.blob {
+    border-radius: 50%;
+    position: absolute;
+    background: #DD99BB;
+    width: 65px;
+    height: 65px;
+    left: calc(50% - 65px / 2);
+    top: 10%;
+}
+
+.blob:nth-child(1) {
+    animation: orbit linear 4s infinite;
+}
+
+.blob:nth-child(2) {
+    animation: up-down ease-in-out 4s infinite;
+}
+
+.blob:nth-child(3) {
+    animation: left-right ease-in-out 4s infinite;
+}
+
+.blob:nth-child(4) {
+    rotate: 45deg;
+    animation: orbit step-start 4s infinite;
+}
+
+.blob:nth-child(5) {
+    rotate: 45deg;
+    animation: up-down ease-in-out 3s infinite;
+}
+
+.blob:nth-child(6) {
+    rotate: 45deg;
+    animation: left-right ease-in-out 5s infinite;
+}
+
+.blob:nth-child(7) {
+    rotate: -45deg;
+    animation: orbit linear 4s infinite;
+}
+
+.blob:nth-child(8) {
+    rotate: -45deg;
+    animation: up-down ease-in-out 5s infinite;
+}
+
+.blob:nth-child(9) {
+    rotate: -45deg;
+    animation: left-right ease-in-out 3s infinite;
+}
+
+.blob:nth-child(10) {
+    transform: translateY(-10vh);
+    animation: orbit ease-in-out 5s infinite;
+}
+
+
+@keyframes blink {
+
+    100%, 0%{
+        background-color: white;
+    }
+
+    50% {
+        background-color: transparent;
+    }
+}
+
+@keyframes up-down {
+
+    100%, 0%{
+        transform: translateY(10vh) translateY(-10vh);
+    }
+
+    50% {
+        transform: translateY(10vh) translateY(10vh);
+    }
+}
+
+
+@keyframes left-right {
+
+    100%, 0%{
+        transform: translateY(10vh) translateX(-10vh);
+    }
+
+    50% {
+        transform: translateY(10vh) translateX(10vh);
+    }
+}
+
+@keyframes orbit {
+
+    0%{
+        transform: translateY(10vh) rotate(0deg) translateX(10vh);
+    }
+
+    100% {
+        transform: translateY(10vh)  rotate(360deg) translateX(10vh);
+    }
+}
+
+@keyframes rotate {
+
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
