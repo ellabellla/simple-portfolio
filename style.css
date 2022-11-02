@@ -100,7 +100,7 @@ a:visited {
 
 #prompt span:nth-child(7) {
     background-color: transparent;
-    padding-right: 30vw;
+    padding-right: 50vw;
 }
 
 #prompt div:nth-child(8) {
@@ -124,7 +124,7 @@ a:visited {
 
 #pink-blobs {
     filter: url("#blobby");
-    height: 28vh;
+    height: 300px;
     width: 40vw;
 }
 
@@ -200,11 +200,11 @@ a:visited {
 @keyframes up-down {
 
     100%, 0%{
-        transform: translateY(10vh) translateY(-10vh);
+        transform: translateY(100px) translateY(-100px);
     }
 
     50% {
-        transform: translateY(10vh) translateY(10vh);
+        transform: translateY(100px) translateY(100px);
     }
 }
 
@@ -212,22 +212,22 @@ a:visited {
 @keyframes left-right {
 
     100%, 0%{
-        transform: translateY(10vh) translateX(-10vh);
+        transform: translateY(100px) translateX(-100px);
     }
 
     50% {
-        transform: translateY(10vh) translateX(10vh);
+        transform: translateY(100px) translateX(100px);
     }
 }
 
 @keyframes orbit {
 
     0%{
-        transform: translateY(10vh) rotate(0deg) translateX(10vh);
+        transform: translateY(100px) rotate(0deg) translateX(100px);
     }
 
     100% {
-        transform: translateY(10vh)  rotate(360deg) translateX(10vh);
+        transform: translateY(100px)  rotate(360deg) translateX(100px);
     }
 }
 
