@@ -31,7 +31,7 @@
                 <div id="ls">
                 </div>
             </p>
-            <div id="prompt">
+            <div id="prompt" style="visibility: hidden;">
                 <span>❤️</span><div id="tri"></div><span>🗀</span><span>~/projects/</span><div></div><span></span><span></span><div></div><span id="time"></span>
             </div>
         </section>
@@ -45,6 +45,8 @@
                     for (repo of data) {
                         ls.innerHTML += `<div><a href="https://github.com/${repo["full_name"]}">${repo["name"]}/</a></div>`;
                     }
+
+                    document.getElementById("prompt").style.visibility = "visible";
                 });
 
             const d = new Date();  

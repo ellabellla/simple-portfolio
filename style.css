@@ -29,6 +29,10 @@ a:visited {
     color: #8A75A9;
 }
 
+section {
+    max-width: fit-content;
+}
+
 #history {
     font-size: 1rem;
     color: #5FAD56;
