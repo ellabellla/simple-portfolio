@@ -5,14 +5,60 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0px;
     margin-top: 5vh;
+}
+
+pre {
+    font-size: 0.3rem;
+    color: #DD99BB;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.svg-filter {
+    filter: brightness(0) saturate(100%) invert(96%) sepia(48%) saturate(2411%) hue-rotate(280deg) brightness(92%) contrast(88%);
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+
+[tooltip]:before {
+    position : absolute;
+    margin-top: -1.2rem;
+    font-size: 1rem;
+    content : attr(tooltip);
+    opacity : 0;
+}
+
+[tooltip]:hover:before {        
+    opacity : 1;
+    pointer-events: none;
+}
+
+nav {
+    font-size: 1.5rem;
+    color: #DD99BB;
+    width: 100%;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #DD99BB;
+}
+
+nav a:visited {
+    color: #DD99BB;
 }
 
 h1 {
     font-size: 5rem;
     color: #DD99BB;
     margin: 0;
-    margin-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -40,7 +86,7 @@ section {
 
 #ls {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, auto);
     padding-left: 5px;
 }
 

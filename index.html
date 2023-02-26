@@ -26,9 +26,18 @@
         </div>
         <h1>Ella Pash</h1>
         <section>
+            <nav>
+                <a href="https://github.com/ellabellla/lmk" tooltip="A 'smart' mechanical keyboard made from scratch.">LMK</a>
+                <a href="https://github.com/ellabellla/pink" tooltip="A toy programming language written in rust.">PINK</a>
+                <a href="https://github.com/ellabellla/reginald" tooltip="A simple regular expression state machine.">REGINAL</a>
+                <a href="https://github.com/ellabellla/simple-portfolio" tooltip="The websites source code.">SRC</a>
+                <a href="https://github.com/ellabellla" tooltip="Github Profile"><img src="img/github-mark.svg" class="svg-filter"/></a>
+                <a href="https://www.linkedin.com/in/ella-pash" tooltip="Linkedin Profile"><img src="img/linkedin.svg" class="svg-filter"/></a>
+            </nav>
             <p id="history">
                 <span>❯</span> ls<br/>
                 <div id="ls">
+                    ...
                 </div>
             </p>
             <div id="prompt" style="visibility: hidden;">
@@ -41,7 +50,6 @@
             fetch('https://api.github.com/users/ellabellla/repos')
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data);
                     for (repo of data) {
                         ls.innerHTML += `<div><a href="https://github.com/${repo["full_name"]}">${repo["name"]}/</a></div>`;
                     }
