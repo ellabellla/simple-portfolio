@@ -37,7 +37,7 @@
             <p id="history">
                 <span>❯</span> ls<br/>
                 <div id="ls">
-                    ...
+                    <div><a>...</a></div>
                 </div>
             </p>
             <div id="prompt" style="visibility: hidden;">
@@ -50,6 +50,7 @@
             fetch('https://api.github.com/users/ellabellla/repos')
                 .then((response) => response.json())
                 .then((data) => {
+                    ls.innerHTML = "";
                     for (repo of data) {
                         ls.innerHTML += `<div><a href="https://github.com/${repo["full_name"]}">${repo["name"]}/</a></div>`;
                     }
